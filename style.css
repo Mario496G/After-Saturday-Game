@@ -1,0 +1,15 @@
+#board{
+    background-color: rgb(15, 9, 9);
+    height: 720px;
+    width: 720px;
+    margin: auto;
+    position: relative;
+}
+#player{
+    height: 72px;
+    width: 72px;
+    position:absolute;
+    background-color: pink;
+    top: 324px;
+    left: 324px;
+}
