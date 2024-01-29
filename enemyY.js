@@ -1,4 +1,8 @@
-function EnemyY(x, y, parent, player){
+
+import { Life } from "./life.js"
+var life = new Life
+
+function EnemyY(x, y, parent, player, life){
     var enemyY = this
     this.height = 55
     this.width = 55
@@ -7,6 +11,7 @@ function EnemyY(x, y, parent, player){
     this.sprite = document.createElement("div")
     this.directionY = 0
     this.speed = 12
+    this.remainingLife = 3 
 
     this.insertEnemy = function(){
        // console.log(parent)
@@ -30,6 +35,13 @@ function EnemyY(x, y, parent, player){
         parent.removeChild(enemyY.sprite)
         clearInterval(enemyY.enemyMoveY, 200)
     }
+    
+    this.restLifeY = function() {
+        parent.removeChild(life.sprite)
+        if (enemyY.remainingLife <=0){
+            window.alert("GAME OVER")
+        }
+    }
 
    this.checkCollision = function(){
     //console.log(enemyY)
@@ -37,10 +49,10 @@ function EnemyY(x, y, parent, player){
         enemyY.y < player.y + player.height &&
         enemyY.x + enemyY.width > player.x &&
         enemyY.y + enemyY.height > player.y){
-        window.alert("Game Over")
+        life.restLifeY()
         }
-
    }
+
 }
 
 export {EnemyY}

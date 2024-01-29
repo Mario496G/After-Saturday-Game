@@ -25,3 +25,10 @@
     position: absolute;
     background-color: rgb(115, 0, 255);
 }
+.life {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(228, 18, 18);
+    margin-left: 10px;
+}
