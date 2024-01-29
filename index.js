@@ -2,22 +2,27 @@ import { Player } from './domingo.js'
 import { EnemyY } from './enemyY.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
-var enemyY = new EnemyY (200, 100, board, player)
 var enemies = []
-var intervalEnemyY
+var intervalEnemyY;
 
-/*function createEnemy(){
 
-    enemies.push(enemyY)
-}*/
+function createEnemy() {
+    var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
+    var enemyY = new EnemyY(coord, 0, board, player, enemies)
+    console.log(enemyY)
+    enemyY.insertEnemy() 
+    enemies.push(enemyY) 
+    intervalEnemyY = setInterval(enemyY.enemyMoveY, 100); //velocidad de la caida libre
+  }
+  
+
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
     player.insertPlayer()
-    enemyY.insertEnemy()
-
-intervalEnemyY = setInterval(enemyY.enemyMoveY, 200);
-enemyY.enemyMoveY()
-} //velocidad de la caida libre
+    
+    var createEnemyInt = setInterval(createEnemy,2000)
+   
+} 
 
 window.onload=function(){
 gameStart()

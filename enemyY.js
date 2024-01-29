@@ -9,7 +9,7 @@ function EnemyY(x, y, parent, player){
     this.speed = 12
 
     this.insertEnemy = function(){
-        console.log(parent)
+       // console.log(parent)
         this.sprite.setAttribute("id", "enemyY")
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
@@ -17,26 +17,27 @@ function EnemyY(x, y, parent, player){
     }
     this.enemyMoveY = function (){
         enemyY.checkCollision()
-        console.log(enemyY.y)
+        //console.log(enemyY.y)
         if (enemyY.y >= 0 && enemyY.y <= 720){
             enemyY.y += enemyY.speed
             enemyY.sprite.style.top = enemyY.y + "px"
         } //movimiento del enemigo en caida libre
-        /*if (enemyY.y > 720){
-            enemyY.removeEnemy()
-            clearInterval(enemyY.enemyMoveY)
-        }*/
+        if (enemyY.y > 670){
+            enemyY.removeEnemy()}
     }
 
-   //setInterval(enemyMoveY(), 2000);
+    this.removeEnemy = function(){
+        parent.removeChild(enemyY.sprite)
+        clearInterval(enemyY.enemyMoveY, 200)
+    }
 
    this.checkCollision = function(){
-    console.log(enemyY)
+    //console.log(enemyY)
     if (enemyY.x < player.x + player.width &&
         enemyY.y < player.y + player.height &&
         enemyY.x + enemyY.width > player.x &&
         enemyY.y + enemyY.height > player.y){
-            window.alert("Game Over")
+        //window.alert("Game Over")
         }
 
    }
