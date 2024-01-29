@@ -1,14 +1,25 @@
 //var domingoX = 324;
 //var domingoY = 324;
 
-function Player(x, y){
+function Player(x, y, parent, enemyY){
     var player = this
+    this.height = 72
+    this.width = 72
     this.x = x
     this.y = y
-    this.sprite = document.getElementById("player")
+    this.sprite = document.createElement("div")
     this.directionX = 0
     this.directionY = 0
     this.speed = 18
+
+    this.insertPlayer = function(){
+        console.log(parent)
+        this.sprite.setAttribute("id", "player")
+        this.sprite.style.left = this.x + "px"
+        this.sprite.style.top = this.y + "px"
+        parent.appendChild(this.sprite)
+    }
+
     this.moveX = function (){
         console.log(player.x)
         var newMoveX = player.x +(18 * player.directionX)
