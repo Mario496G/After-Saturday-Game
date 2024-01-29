@@ -1,18 +1,21 @@
 import { Player } from './domingo.js'
 import { EnemyY } from './enemyY.js'
+import { EnemyX } from './enemyX.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
 var enemies = []
 var intervalEnemyY;
-
+var intervalEnemyX;
 
 function createEnemy() {
     var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
     var enemyY = new EnemyY(coord, 0, board, player, enemies)
-    console.log(enemyY)
+    var enemyX = new EnemyX(0, coord, board, player, enemies)
     enemyY.insertEnemy() 
-    enemies.push(enemyY) 
+    enemyX.insertEnemy()
+    enemies.push(enemyY, enemyX) 
     intervalEnemyY = setInterval(enemyY.enemyMoveY, 100); //velocidad de la caida libre
+    intervalEnemyX = setInterval(enemyX.enemyMoveX, 100);
   }
   
 

@@ -19,3 +19,9 @@
     position: absolute;
     background-color: yellow;
 }
+#enemyX{
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    background-color: rgb(115, 0, 255);
+}
