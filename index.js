@@ -1,31 +1,26 @@
+import { Player } from './domingo.js'
 var board = document.getElementById("board")
-var domingo = document.getElementById("player")
-var domingoX = 324;
-var domingoY = 324;
-var speed = 1;
-function moveDomingoX(speed){
-    domingoX += speed*18
-    domingo.style.left = domingoX + "px"
-}
+var player = new Player (324, 324, board)
 
-function moveDomingoY(speed){
-    domingoY += speed*18
-    domingo.style.top = domingoY + "px"
-}
 
 window.addEventListener('keydown', function(e){
-switch(e.key){
+console.log("paso de ti")
+    switch(e.key){
 case "a": 
-moveDomingoX (-1)
+player.directionX = -1
+player.moveX()
 break;
 case "d": 
-moveDomingoX (1)
+player.directionX = 1
+player.moveX()
 break;
 case "w": 
-moveDomingoY (-1)
+player.directionY = -1
+player.moveY()
 break;
 case "s": 
-moveDomingoY (1)
+player.directionY = 1
+player.moveY()
 break;
     }
 })
