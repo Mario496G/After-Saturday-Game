@@ -1,6 +1,8 @@
 import { Player } from './domingo.js'
+import { EnemyY } from './enemyY.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
+var enemyY = new EnemyY (0, 150, board)
 
 
 window.addEventListener('keydown', function(e){

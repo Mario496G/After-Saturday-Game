@@ -13,3 +13,10 @@
     top: 324px;
     left: 324px;
 }
+#enemyY{
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    background-color: yellow;
+    left: 150px;
+}
