@@ -9,8 +9,9 @@ var intervalEnemyX;
 
 function createEnemy() {
     var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
+    var coord1 = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
     var enemyY = new EnemyY(coord, 0, board, player, enemies)
-    var enemyX = new EnemyX(0, coord, board, player, enemies)
+    var enemyX = new EnemyX(0, coord1, board, player, enemies)
     enemyY.insertEnemy() 
     enemyX.insertEnemy()
     enemies.push(enemyY, enemyX) 

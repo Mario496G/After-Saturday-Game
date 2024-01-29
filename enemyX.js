@@ -20,7 +20,7 @@ function EnemyX(x, y, parent, player){
         //console.log(enemyX.x)
         if (enemyX.x >= 0 && enemyX.x <= 720){
             enemyX.x += enemyX.speed
-            enemyX.sprite.style.top = enemyX.x + "px"
+            enemyX.sprite.style.left = enemyX.x + "px"
         } //movimiento del enemigo en caida libre
         if (enemyX.x > 670){
             enemyX.removeEnemy()}
