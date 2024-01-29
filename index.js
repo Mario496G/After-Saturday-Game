@@ -11,7 +11,7 @@ var intervalEnemyY
     enemies.push(enemyY)
 }*/
 
-function gameStart(){
+function gameStart(){ //función de creación de personaje + enemigo amarillo
     player.insertPlayer()
     enemyY.insertEnemy()
 

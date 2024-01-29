@@ -32,8 +32,11 @@ function EnemyY(x, y, parent, player){
 
    this.checkCollision = function(){
     console.log(enemyY)
-    if (enemyY.x < player.x + player.width ){
-            console.log("Game Over")
+    if (enemyY.x < player.x + player.width &&
+        enemyY.y < player.y + player.height &&
+        enemyY.x + enemyY.width > player.x &&
+        enemyY.y + enemyY.height > player.y){
+            window.alert("Game Over")
         }
 
    }
