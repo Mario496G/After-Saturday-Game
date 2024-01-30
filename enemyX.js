@@ -23,12 +23,13 @@ function EnemyX(x, y, parent, player){
             enemyX.sprite.style.left = enemyX.x + "px"
         } //movimiento del enemigo en caida libre
         if (enemyX.x > 670){
-            enemyX.removeEnemy()}
+            enemyX.removeEnemy()
+        }
     }
 
     this.removeEnemy = function(){
-        parent.removeChild(enemyX.sprite)
-        clearInterval(enemyX.enemyMoveX, 200)
+        parent.removeChild(this.sprite)
+       clearInterval(enemyX.enemyMoveX, 200)
     }
 
    this.checkCollision = function(){
@@ -37,9 +38,8 @@ function EnemyX(x, y, parent, player){
         enemyX.y < player.y + player.height &&
         enemyX.x + enemyX.width > player.x &&
         enemyX.y + enemyX.height > player.y){
-        window.alert("Game Over")
+            enemyX.removeEnemy()
         }
-
    }
 }
 

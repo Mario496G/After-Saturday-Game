@@ -5,13 +5,14 @@ import { Life } from './life.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
 var enemies = []
+var enemyX = new EnemyX
+var enemyY = new EnemyY
 var intervalEnemyY;
 var intervalEnemyX;
 var life;
 
 function createLife (){
     for (var i = 0; i < 3; i++) {
-        console.log("122")
         life = new Life(30 * i, 15, board); 
         life.insertLife();
     }
@@ -36,10 +37,8 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
     player.insertPlayer()
     var createEnemyInt = setInterval(createEnemy,2000)
     createLife()
-   
+   // restLifeY()
 } 
-
-
 
 
 window.onload=function(){
@@ -67,3 +66,13 @@ player.moveY()
 break;
     }
 })
+
+
+function restLifeY () {
+    if (enemyX.checkCollision() === true || enemyY.checkCollision() === true)
+    player.remainingLife - 1
+    board.removeChild(life.sprite)
+    if (player.remainingLife <=0){
+       window.alert("GAME OVER")
+    }
+}
