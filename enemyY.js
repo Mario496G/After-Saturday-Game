@@ -1,3 +1,6 @@
+var heart = document.getElementsByClassName("life")
+var board = document.getElementById("board")
+
 function EnemyY(x, y, parent, player) {
   var enemyY = this;
   this.height = 55;
@@ -41,13 +44,12 @@ function EnemyY(x, y, parent, player) {
       enemyY.y + enemyY.height > player.y
     ) {
       enemyY.removeEnemy();
-      window.alert(player.remainingLife);
+      heart[0].parentNode.removeChild(heart[0]);
       player.remainingLife = player.remainingLife - 1;
-      window.alert(player.remainingLife);
       if (player.remainingLife <= 0) {
           window.alert("GAME OVER");
         }
-        board.removeChild(life.sprite);
+        
     }
   };
 }
