@@ -1,5 +1,5 @@
 #board{
-    background-color: rgb(15, 9, 9);
+    background-image: url(./images/board.png);
     height: 720px;
     width: 720px;
     margin: auto;
@@ -9,7 +9,7 @@
     height: 72px;
     width: 72px;
     position:absolute;
-    background-color: pink;
+    background-image: url(./images/domingo.png);
     top: 324px;
     left: 324px;
 }
@@ -17,11 +17,18 @@
     height: 55px;
     width: 55px;
     position: absolute;
-    background-color: yellow;
+    background-image: url(./images/html.png);
 }
 #enemyX{
     height: 55px;
     width: 55px;
     position: absolute;
-    background-color: rgb(115, 0, 255);
+    background-image: url(./images/CSS.png);
+}
+.life {
+    position: absolute;
+    height: 41px;
+    width: 41px;
+    background-image: url(./images/corazon.png);
+    margin-left: 10px;
 }
