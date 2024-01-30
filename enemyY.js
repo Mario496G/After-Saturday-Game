@@ -7,6 +7,7 @@ function EnemyY(x, y, parent, player){
     this.sprite = document.createElement("div")
     this.directionY = 0
     this.speed = 12
+    this.timerId
 
     this.insertEnemy = function(){
        // console.log(parent)
@@ -14,7 +15,9 @@ function EnemyY(x, y, parent, player){
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
         parent.appendChild(this.sprite)
+        this.timerId = setInterval(enemyY.enemyMoveY, 100);
     }
+
     this.enemyMoveY = function (){
         enemyY.checkCollision()
         //console.log(enemyY.y)
@@ -23,12 +26,13 @@ function EnemyY(x, y, parent, player){
             enemyY.sprite.style.top = enemyY.y + "px"
         } //movimiento del enemigo en caida libre
         if (enemyY.y > 670){
+            //console.log(enemyY.timerId)
             enemyY.removeEnemy()}
     }
 
     this.removeEnemy = function(){
         parent.removeChild(enemyY.sprite)
-        clearInterval(enemyY.enemyMoveY, 200)
+        clearInterval(enemyY.timerId)
     }
 
    this.checkCollision = function(){
@@ -37,7 +41,7 @@ function EnemyY(x, y, parent, player){
         enemyY.y < player.y + player.height &&
         enemyY.x + enemyY.width > player.x &&
         enemyY.y + enemyY.height > player.y){
-        window.alert("Game Over")
+            gameover.style.opacity = 1;
         }
 
    }
