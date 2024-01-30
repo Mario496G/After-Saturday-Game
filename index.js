@@ -2,29 +2,46 @@ import { Player } from './domingo.js'
 import { EnemyY } from './enemyY.js'
 import { EnemyX } from './enemyX.js'
 import { Life } from './life.js'
+import { JavaY } from './java.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
+var javaY = new JavaY
 var enemies = []
+var javass = []
 var enemyX = new EnemyX
 var enemyY = new EnemyY
 var intervalEnemyY;
 var intervalEnemyX;
 var life;
+var musicGame = new Audio("./images/happy.mp3");
+function createJava() {
+    
+    var coord2 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+    var javaY = new JavaY(coord2, 0, board, player, enemies)
+    javaY.insertJava()
+    javass.push(javaY) 
+    //velocidad de la caida libre
+    
+}
+
 
 function createEnemy() {
-    var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
-    var coord1 = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
+    var coord = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+    var coord1 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+    
     var enemyY = new EnemyY(coord, 0, board, player, enemies)
     var enemyX = new EnemyX(0, coord1, board, player, enemies)
+    
     enemyY.insertEnemy() 
     enemyX.insertEnemy()
-    enemies.push(enemyY, enemyX) 
-     //velocidad de la caida libre
     
-  }
-  
-  function createLife (){
-    for (var i = 0; i < 3; i++) {
+    enemies.push(enemyY, enemyX) 
+    //velocidad de la caida libre
+    
+}
+
+function createLife (n){
+    for (var i = 0; i < n; i++) {
         life = new Life(30 * i, 15, board); 
         life.insertLife();
     }
@@ -32,14 +49,15 @@ function createEnemy() {
 
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
+    musicGame.play();
     player.insertPlayer()
-    createLife()
+    createLife(3)
     var createEnemyInt = setInterval(createEnemy,2000)
-   
+    var createJavaInt = setInterval(createJava,10000)
 } 
 
 window.onload=function(){
-gameStart()
+    gameStart()
 }
 
 window.addEventListener('keydown', function(e){
@@ -79,6 +97,7 @@ player.moveY()
 break;
     }
 })
+
 
 function restLifeY () {
     if (enemyX.checkCollision() === true || enemyY.checkCollision() === true)
