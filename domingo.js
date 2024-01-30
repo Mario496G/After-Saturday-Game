@@ -11,7 +11,7 @@ function Player(x, y, parent, enemyY){
     this.directionX = 0
     this.directionY = 0
     this.speed = 18
-
+    this.remainingLife = 3 
     this.insertPlayer = function(){
         console.log(parent)
         this.sprite.setAttribute("id", "player")
