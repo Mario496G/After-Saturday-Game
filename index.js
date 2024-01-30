@@ -39,7 +39,15 @@ case "a":
 player.directionX = -1
 player.moveX()
 break;
+case "A": 
+player.directionX = -1
+player.moveX()
+break;
 case "d": 
+player.directionX = 1
+player.moveX()
+break;
+case "D": 
 player.directionX = 1
 player.moveX()
 break;
@@ -47,7 +55,15 @@ case "w":
 player.directionY = -1
 player.moveY()
 break;
+case "W": 
+player.directionY = -1
+player.moveY()
+break;
 case "s": 
+player.directionY = 1
+player.moveY()
+break;
+case "S": 
 player.directionY = 1
 player.moveY()
 break;
