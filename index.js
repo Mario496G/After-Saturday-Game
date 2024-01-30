@@ -10,6 +10,7 @@ var enemyY = new EnemyY
 var intervalEnemyY;
 var intervalEnemyX;
 var life;
+var music = new Audio('./images/happy.mp3');
 
 function createEnemy() {
     var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
@@ -32,6 +33,7 @@ function createEnemy() {
 
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
+    music.play();
     player.insertPlayer()
     createLife()
     var createEnemyInt = setInterval(createEnemy,2000)
