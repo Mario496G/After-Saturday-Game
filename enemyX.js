@@ -1,6 +1,6 @@
 var heart = document.getElementsByClassName("life");
 var board = document.getElementById("board");
-function EnemyX(x, y, parent, player) {
+function EnemyX(x, y, parent, player, enemies) {
   var enemyX = this;
   this.height = 55;
   this.width = 55;
@@ -28,6 +28,7 @@ function EnemyX(x, y, parent, player) {
     } //movimiento del enemigo en caida libre
     if (enemyX.x > 670) {
       enemyX.removeEnemy();
+      enemies.shift()
     }
   };
 
@@ -45,10 +46,12 @@ function EnemyX(x, y, parent, player) {
       enemyX.y + enemyX.height > player.y
     ) {
       enemyX.removeEnemy();
+      enemies.splice(enemies.indexOf(enemyX), 1)
+
       heart[0].parentNode.removeChild(heart[0]);
       player.remainingLife = player.remainingLife - 1;
       if (player.remainingLife <= 0) {
-        gameover.style.opacity = 1;
+        //gameover.style.opacity = 1;
         //window.alert("GAME OVER");
       }
     }

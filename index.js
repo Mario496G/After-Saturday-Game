@@ -5,12 +5,13 @@ import { Life } from './life.js'
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
 var enemies = []
-var enemyX = new EnemyX
+/*var enemyX = new EnemyX
 var enemyY = new EnemyY
 var intervalEnemyY;
-var intervalEnemyX;
+var intervalEnemyX;*/
 var life;
-
+var gameOverId
+var createEnemyInt
 function createEnemy() {
     var coord = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
     var coord1 = Math.floor(Math.random() * 10) * 50 // generacion de ramdon
@@ -20,7 +21,8 @@ function createEnemy() {
     enemyX.insertEnemy()
     enemies.push(enemyY, enemyX) 
      //velocidad de la caida libre
-    
+     console.log(enemies)
+
   }
   
   function createLife (){
@@ -30,11 +32,25 @@ function createEnemy() {
     }
 }
 
+function gameOver(){
+    if (player.remainingLife <= 0){
+        clearInterval(player)
+        clearInterval(gameOverId)
+        clearInterval(createEnemyInt)
+        enemies.forEach(function(enemy){
+            enemy.removeEnemy()
+        })
+        board.removeChild(player.sprite)
+        gameover.style.opacity = 1
+    }
+}
+
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
     player.insertPlayer()
     createLife()
-    var createEnemyInt = setInterval(createEnemy,2000)
+     createEnemyInt = setInterval(createEnemy,2000)
+    gameOverId = setInterval(gameOver, 500)
    
 } 
 
@@ -80,11 +96,12 @@ break;
     }
 })
 
-function restLifeY () {
+/*function restLifeY () {
     if (enemyX.checkCollision() === true || enemyY.checkCollision() === true)
     player.remainingLife - 1
     board.removeChild(life.sprite)
     if (player.remainingLife <=0){
        window.alert("GAME OVER")
     }
-}
+}*/
+

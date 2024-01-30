@@ -1,3 +1,11 @@
+body{
+    height: 800px;
+    width: 800px;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 30vw;
+}
+
 #board{
     background-image: url(./images/board.png);
     height: 720px;
