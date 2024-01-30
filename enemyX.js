@@ -7,6 +7,7 @@ function EnemyX(x, y, parent, player){
     this.sprite = document.createElement("div")
     this.directionX = 0
     this.speed = 12
+    this.timerId
 
     this.insertEnemy = function(){
        // console.log(parent)
@@ -14,6 +15,7 @@ function EnemyX(x, y, parent, player){
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
         parent.appendChild(this.sprite)
+        this.timerId = setInterval(enemyX.enemyMoveX, 100);
     }
     this.enemyMoveX = function (){
         enemyX.checkCollision()
@@ -28,7 +30,7 @@ function EnemyX(x, y, parent, player){
 
     this.removeEnemy = function(){
         parent.removeChild(enemyX.sprite)
-        clearInterval(enemyX.enemyMoveX, 200)
+        clearInterval(enemyX.timerId)
     }
 
    this.checkCollision = function(){
@@ -37,7 +39,7 @@ function EnemyX(x, y, parent, player){
         enemyX.y < player.y + player.height &&
         enemyX.x + enemyX.width > player.x &&
         enemyX.y + enemyX.height > player.y){
-        window.alert("Game Over")
+        gameover.style.opacity = 1;
         }
 
    }

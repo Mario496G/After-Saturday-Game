@@ -15,8 +15,8 @@ function createEnemy() {
     enemyY.insertEnemy() 
     enemyX.insertEnemy()
     enemies.push(enemyY, enemyX) 
-    intervalEnemyY = setInterval(enemyY.enemyMoveY, 100); //velocidad de la caida libre
-    intervalEnemyX = setInterval(enemyX.enemyMoveX, 100);
+     //velocidad de la caida libre
+    
   }
   
 
