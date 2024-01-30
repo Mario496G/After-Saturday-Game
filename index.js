@@ -3,19 +3,34 @@ import { EnemyY } from './enemyY.js'
 import { EnemyX } from './enemyX.js'
 import { Life } from './life.js'
 import { JavaY } from './java.js'
+import {ZumoX} from './zumoaloe.js'
+
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
 var javaY = new JavaY
+var zumoX = new ZumoX
 var enemies = []
 var javass = []
+var zumos = []
 var enemyX = new EnemyX
 var enemyY = new EnemyY
 var intervalEnemyY;
 var intervalEnemyX;
 var life;
 var musicGame = new Audio("./images/happy.mp3");
-function createJava() {
+
+function createZumo() {
     
+    var coord3 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+    var zumoX = new ZumoX(0, coord3, board, player, enemies)
+    zumoX.insertZumo() 
+    zumos.push(zumoX) 
+    //velocidad de la caida libre
+    
+}
+
+
+function createJava() {
     var coord2 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
     var javaY = new JavaY(coord2, 0, board, player, enemies)
     javaY.insertJava()
@@ -54,6 +69,7 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
     createLife(3)
     var createEnemyInt = setInterval(createEnemy,2000)
     var createJavaInt = setInterval(createJava,10000)
+    var createZumoInt = setInterval(createZumo,10000)
 } 
 
 window.onload=function(){

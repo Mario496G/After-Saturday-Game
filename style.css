@@ -52,6 +52,21 @@
     width: 718px;
     margin: auto;
     text-align: end;
-    
-    
+
+}
+ 
+#zumoX {
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    background-color: blue;
+}
+
+.botel {
+    position: absolute;
+    height: 50;
+    width: 50;
+    top: 640 px;
+    left: 640 px;
+    background-color: chartreuse;
 }
