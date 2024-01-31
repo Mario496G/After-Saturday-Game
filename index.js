@@ -89,6 +89,7 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
     gameOverId = setInterval(gameOver, 500)
     createLife(3)
     count.style.opacity = 1;
+    startscreen.style.opacity = 0;
 };
 //var createZumoInt = setInterval(createZumo,10000)
 
