@@ -3,31 +3,22 @@ import { EnemyY } from './enemyY.js'
 import { EnemyX } from './enemyX.js'
 import { Life } from './life.js'
 import { JavaY } from './java.js'
-import {ZumoX} from './zumoaloe.js'
+//import {ZumoX} from './zumoaloe.js'
 
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
-var javaY = new JavaY
-var zumoX = new ZumoX
+//var zumoX = new ZumoX
 var enemies = []
-
-var enemyX = new EnemyX
-=======
 var javass = []
-var zumos = []
-
-/*var enemyX = new EnemyX
-var enemyY = new EnemyY
-var intervalEnemyY;
-var intervalEnemyX;*/
+//var zumos = []
 
 var life;
 var gameOverId
 var createEnemyInt
-=======
+var createJavaInt
 var musicGame = new Audio("./images/happy.mp3");
 
-function createZumo() {
+/*function createZumo() {
     
     var coord3 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
     var zumoX = new ZumoX(0, coord3, board, player, enemies)
@@ -35,7 +26,7 @@ function createZumo() {
     zumos.push(zumoX) 
     //velocidad de la caida libre
     
-}
+}*/
 
 
 function createJava() {
@@ -77,8 +68,12 @@ function gameOver(){
         clearInterval(player)
         clearInterval(gameOverId)
         clearInterval(createEnemyInt)
+        clearInterval(createJavaInt)
         enemies.forEach(function(enemy){
             enemy.removeEnemy()
+        })
+        javass.forEach(function(java){
+            java.removeJavaY()
         })
         board.removeChild(player.sprite)
         gameover.style.opacity = 1
@@ -90,13 +85,11 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
     musicGame.play();
     player.insertPlayer()
     createLife()
-     createEnemyInt = setInterval(createEnemy,2000)
+    createEnemyInt = setInterval(createEnemy,2000)
+    createJavaInt = setInterval(createJava, 10000)
     gameOverId = setInterval(gameOver, 500)
-   
     createLife(3)
-    var createEnemyInt = setInterval(createEnemy,2000)
-    var createJavaInt = setInterval(createJava,10000)
-    var createZumoInt = setInterval(createZumo,10000)
+   //var createZumoInt = setInterval(createZumo,10000)
 
 } 
 
