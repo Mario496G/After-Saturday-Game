@@ -12,7 +12,7 @@ h1{
 }
 
 body{
-    background-color: lavender;
+    background-image: 
 }
 
 #board{
@@ -78,21 +78,29 @@ body{
 
 #myBtn {
     position: absolute;
-    top: 324px;
+    top: 100px;
     height: 60px;
-    width: 90px;
+    width: 110px;
     opacity: 1;
+    background-color: antiquewhite;
     text-align: center;
+    border-radius: 20px;
     display: visible;
+    font-family: 'Press Start 2P', system-ui;
 }
 
 #restart {
     position: absolute;
-    top: 324px;
+    top: 490px;
+    left: 300px;
     height: 60px;
-    width: 90px;
+    width: 120px;
     opacity: 1;
+    background-color: rgb(80, 91, 143);
+    color: aliceblue;
     text-align: center;
+    border-radius: 20px;
+    font-family: 'Press Start 2P', system-ui;
   
 }
  

@@ -20,7 +20,7 @@ var musicGame = new Audio("./images/happy.mp3");
 /*function createZumo() {
     
     var coord3 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
-    var zumoX = new ZumoX(0, coord3, board, player, enemies)
+    var zumoX = new ZumoX(0, coord3, board, player, zumos)
     zumoX.insertZumo() 
     zumos.push(zumoX) 
     //velocidad de la caida libre
