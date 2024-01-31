@@ -11,7 +11,6 @@ var player = new Player (324, 324, board)
 var enemies = []
 var javass = []
 //var zumos = []
-
 var life;
 var gameOverId
 var createEnemyInt
@@ -31,7 +30,7 @@ var musicGame = new Audio("./images/happy.mp3");
 
 function createJava() {
     var coord2 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
-    var javaY = new JavaY(coord2, 0, board, player, enemies)
+    var javaY = new JavaY(coord2, 0, board, player, javass)
     javaY.insertJava()
     javass.push(javaY) 
     //velocidad de la caida libre
@@ -84,17 +83,21 @@ function gameOver(){
 function gameStart(){ //función de creación de personaje + enemigo amarillo
     musicGame.play();
     player.insertPlayer()
-    createLife()
+    //createLife()
     createEnemyInt = setInterval(createEnemy,2000)
     createJavaInt = setInterval(createJava, 10000)
     gameOverId = setInterval(gameOver, 500)
     createLife(3)
+};
    //var createZumoInt = setInterval(createZumo,10000)
 
-} 
+ 
 
 window.onload=function(){
-    gameStart()
+    document.getElementById("myBtn").addEventListener("click", function(){
+        gameStart()
+        myBtn.style.display= "none";
+        })
 }
 
 window.addEventListener('keydown', function(e){

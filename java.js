@@ -37,7 +37,7 @@ function JavaY(x, y, parent, player, javass) {
   };
   //[0]
   this.removeJavaY = function () {
-    parent.removeChild(java.sprite);
+    board.removeChild(java.sprite);
     clearInterval(java.timerId);
   };
 
@@ -51,7 +51,7 @@ function JavaY(x, y, parent, player, javass) {
     ) {
       java.removeJavaY();
       javass.splice(javass.indexOf(java), 1)
-      count.innerText = parseInt(count.innerText) + 50 + "POINTS"// para igualar el texto de html a numnero 
+      count.innerText = parseInt(count.innerText) + 50 + " POINTS"// para igualar el texto de html a numnero 
       musicOk.play()
     }
   };
