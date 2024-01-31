@@ -1,6 +1,6 @@
 var heart = document.getElementsByClassName("life");
 var board = document.getElementById("board");
-function EnemyY(x, y, parent, player) {
+function EnemyY(x, y, parent, player, enemies) {
   var enemyY = this;
   this.height = 55;
   this.width = 55;
@@ -31,6 +31,8 @@ function EnemyY(x, y, parent, player) {
     if (enemyY.y > 670) {
       //console.log(enemyY.timerId)
       enemyY.removeEnemy();
+      enemies.shift()
+
     }
   };
 
@@ -48,11 +50,12 @@ function EnemyY(x, y, parent, player) {
       enemyY.y + enemyY.height > player.y
     ) {
       enemyY.removeEnemy();
+      enemies.splice(enemies.indexOf(enemyY), 1)
       heart[0].parentNode.removeChild(heart[0]);
       player.remainingLife = player.remainingLife - 1;
       musicBad.play()
       if (player.remainingLife <= 0) {
-        gameover.style.opacity = 1;
+        //gameover.style.opacity = 1;
         //window.alert("GAME OVER");
       }
     }

@@ -1,3 +1,20 @@
+html{
+    font-family: 'Press Start 2P', system-ui;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+body{
+    height: 800px;
+    width: 800px;
+    position: relative;
+    background-color: lavender;
+    padding: 3vh 10vh 27vw 27vw;
+}
+
 #board{
     background-image: url(./images/board.png);
     height: 720px;

@@ -10,13 +10,21 @@ var player = new Player (324, 324, board)
 var javaY = new JavaY
 var zumoX = new ZumoX
 var enemies = []
+
+var enemyX = new EnemyX
+=======
 var javass = []
 var zumos = []
-var enemyX = new EnemyX
+
+/*var enemyX = new EnemyX
 var enemyY = new EnemyY
 var intervalEnemyY;
-var intervalEnemyX;
+var intervalEnemyX;*/
+
 var life;
+var gameOverId
+var createEnemyInt
+=======
 var musicGame = new Audio("./images/happy.mp3");
 
 function createZumo() {
@@ -51,9 +59,11 @@ function createEnemy() {
     enemyX.insertEnemy()
     
     enemies.push(enemyY, enemyX) 
-    //velocidad de la caida libre
-    
-}
+     //velocidad de la caida libre
+     console.log(enemies)
+
+  }
+  
 
 function createLife (n){
     for (var i = 0; i < n; i++) {
@@ -62,14 +72,32 @@ function createLife (n){
     }
 }
 
+function gameOver(){
+    if (player.remainingLife <= 0){
+        clearInterval(player)
+        clearInterval(gameOverId)
+        clearInterval(createEnemyInt)
+        enemies.forEach(function(enemy){
+            enemy.removeEnemy()
+        })
+        board.removeChild(player.sprite)
+        gameover.style.opacity = 1
+    }
+}
+
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
     musicGame.play();
     player.insertPlayer()
+    createLife()
+     createEnemyInt = setInterval(createEnemy,2000)
+    gameOverId = setInterval(gameOver, 500)
+   
     createLife(3)
     var createEnemyInt = setInterval(createEnemy,2000)
     var createJavaInt = setInterval(createJava,10000)
     var createZumoInt = setInterval(createZumo,10000)
+
 } 
 
 window.onload=function(){
@@ -114,12 +142,3 @@ break;
     }
 })
 
-
-function restLifeY () {
-    if (enemyX.checkCollision() === true || enemyY.checkCollision() === true)
-    player.remainingLife - 1
-    board.removeChild(life.sprite)
-    if (player.remainingLife <=0){
-       window.alert("GAME OVER")
-    }
-}
