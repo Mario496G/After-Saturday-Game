@@ -80,7 +80,7 @@ body{
     width: 90px;
     opacity: 1;
     text-align: center;
-    position:relative;
+    display: visible;
 }
  
 #zumoX {

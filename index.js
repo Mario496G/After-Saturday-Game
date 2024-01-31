@@ -96,7 +96,7 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
 window.onload=function(){
     document.getElementById("myBtn").addEventListener("click", function(){
         gameStart()
-        myBtn.style.opacity= 0;
+        myBtn.style.display= "none";
         })
 }
 
