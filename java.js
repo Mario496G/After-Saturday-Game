@@ -32,7 +32,7 @@ function JavaY(x, y, parent, player, javass) {
     if (java.y > 670) {
       //console.log(java.timerId)
       java.removeJavaY();
-      javass.shift();
+      javass.splice(javass.indexOf(java), 1);
     }
   };
   //[0]

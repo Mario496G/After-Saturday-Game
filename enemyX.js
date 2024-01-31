@@ -29,7 +29,7 @@ function EnemyX(x, y, parent, player, enemies) {
     } //movimiento del enemigo en caida libre
     if (enemyX.x > 670) {
       enemyX.removeEnemy();
-      enemies.shift()
+      enemies.splice(enemies.indexOf(enemyX), 1)
     }
   };
 

@@ -70,34 +70,49 @@ function gameOver(){
         clearInterval(createJavaInt)
         enemies.forEach(function(enemy){
             enemy.removeEnemy()
+            
         })
+
         javass.forEach(function(java){
             java.removeJavaY()
         })
         board.removeChild(player.sprite)
         gameover.style.opacity = 1
-    }
+        life.style.opacity = 0
+    } 
+      enemies = []
 }
 
 
 function gameStart(){ //función de creación de personaje + enemigo amarillo
     musicGame.play();
+    
     player.insertPlayer()
-    //createLife()
     createEnemyInt = setInterval(createEnemy,2000)
     createJavaInt = setInterval(createJava, 10000)
     gameOverId = setInterval(gameOver, 500)
     createLife(3)
+    count.style.opacity = 1;
 };
-   //var createZumoInt = setInterval(createZumo,10000)
+//var createZumoInt = setInterval(createZumo,10000)
 
- 
+/*document.getElementById("restart").addEventListener("click",resetGame)
+
+function resetGame() {
+    gameStart();
+    //clearInterval(gameOverId);
+    //clearInterval(createEnemyInt);
+    //clearInterval(createJavaInt);
+    gameover.style.opacity = 0;
+
+}*/
+
 
 window.onload=function(){
     document.getElementById("myBtn").addEventListener("click", function(){
         gameStart()
         myBtn.style.display= "none";
-        })
+    })
 }
 
 window.addEventListener('keydown', function(e){

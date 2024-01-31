@@ -31,7 +31,7 @@ function EnemyY(x, y, parent, player, enemies) {
     if (enemyY.y > 670) {
       //console.log(enemyY.timerId)
       enemyY.removeEnemy();
-      enemies.shift()
+      enemies.splice(enemies.indexOf(enemyY), 1)
 
     }
   };
@@ -51,6 +51,7 @@ function EnemyY(x, y, parent, player, enemies) {
     ) {
       enemyY.removeEnemy();
       enemies.splice(enemies.indexOf(enemyY), 1)
+      
       heart[0].parentNode.removeChild(heart[0]);
       player.remainingLife = player.remainingLife - 1;
       musicBad.play()

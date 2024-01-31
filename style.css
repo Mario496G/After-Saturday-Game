@@ -53,6 +53,7 @@ body{
     width: 41px;
     background-image: url(./images/corazon.png);
     margin-left: 10px;
+    opacity: 1;
 }
 #gameover{
     background-image: url(./images/gameover.png);
@@ -69,21 +70,33 @@ body{
     background-image: url(./images/javaScript.png);
 }
 #count{
-    border: solid red;
-    height: 60px;
-    width: 715px;
+    
+    height: 35px;
+    width: 716px;
     text-align: end;
+    padding-top: 25px;
     position: absolute;
+    opacity: 0;
 }
 
 #myBtn {
     position: absolute;
     top: 324px;
-    height: 70px;
+    height: 60px;
     width: 90px;
     opacity: 1;
     text-align: center;
     display: visible;
+}
+
+#restart {
+    position: absolute;
+    top: 324px;
+    height: 60px;
+    width: 90px;
+    opacity: 1;
+    text-align: center;
+  
 }
  
 #zumoX {
@@ -100,4 +113,8 @@ body{
     top: 640 px;
     left: 640 px;
     background-color: chartreuse;
+}
+
+.visible{
+    display:visible;
 }
