@@ -1,7 +1,7 @@
 var heart = document.getElementsByClassName("life");
 var board = document.getElementById("board");
 var count = document.getElementById("count")
-function JavaY(x, y, parent, player) {
+function JavaY(x, y, parent, player, javass) {
   var java = this;
   this.height = 55;
   this.width = 55;
@@ -32,9 +32,10 @@ function JavaY(x, y, parent, player) {
     if (java.y > 670) {
       //console.log(java.timerId)
       java.removeJavaY();
+      javass.shift();
     }
   };
-  [0]
+  //[0]
   this.removeJavaY = function () {
     parent.removeChild(java.sprite);
     clearInterval(java.timerId);
@@ -49,7 +50,8 @@ function JavaY(x, y, parent, player) {
       java.y + java.height > player.y
     ) {
       java.removeJavaY();
-      count.innerText = parseInt(count.innerText) + 50 + "€"// para igualar el texto de html a numnero 
+      javass.splice(javass.indexOf(java), 1)
+      count.innerText = parseInt(count.innerText) + 50 + "POINTS"// para igualar el texto de html a numnero 
       musicOk.play()
     }
   };
