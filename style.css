@@ -4,36 +4,125 @@ html{
 
 h1{
     font-size: 50px;
+    margin: 0px;
 }
 
-.header{
-    text-align: center;
-    position: relative;   
-}
 
 body{
-    height: 100%;
-    width: 100%;
-    position: relative;
     background-color: lavender;
+    margin: 0px;
 }
 
-#board{
-    background-image: url(./images/board.png);
-    height: 720px;
-    width: 720px;
-    margin: auto;
-    position: relative;
+
+/* -----------------
+--- COMPARTIDO ----
+------------------- */
+.centrado{
+    display: inline-flex;
     justify-content: center;
-    display: flex;
+    align-items: center;
 }
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+/* -----------------
+--- COMPARTIDO ----
+------------------- */
+
+
+
+/* --- HEADER --- */
+header{
+    text-align: center;
+    position: relative;   
+    width: 100%;
+    height: 110px;
+    border: 1px solid red;
+}
+
+/* --- FIN HEADER --- */
+
+/* --- MAIN --- */
+main{
+    width: 100%;
+    height: calc(100vh - 110px);
+    border: 1px solid red;
+}
+
+#board,
+#gameover{
+    height: 610px;
+    width: 720px;
+}
+
+#board .imagen,
+#gameover .imagen{
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#gameover{ 
+    opacity: 0;
+}
+
+#count{
+    top: 0px;
+    right: 0px;
+    padding: 20px 12px;
+    opacity: 0;
+}
+
+#myBtn {
+    position: absolute;
+    top: 324px;
+    height: 60px;
+    width: 90px;
+    opacity: 1;
+}
+
+#restart {
+    height: 60px;
+    width: 90px;
+    opacity: 1;
+    text-align: center;
+    bottom: 100px;
+}
+
+.botella{
+    width: 200px;
+    height: 400px;
+bottom: 0px;
+left: 100%;
+border: 1px solid red;
+}
+
+.botella img{
+   height: 400px;
+   top: 0px;
+   left: 10px;
+}
+    
+
+/* --- FIN MAIN --- */
+
+
+
+/* --- SCRIPT NO HTML --- */
 #player{
     height: 72px;
     width: 72px;
     position:absolute;
     background-image: url(./images/domingo.png);
-    top: 324px;
-    left: 324px;
+    /* top: 324px;
+    left: 324px; */
 }
 #enemyY{
     height: 55px;
@@ -55,49 +144,19 @@ body{
     margin-left: 10px;
     opacity: 1;
 }
-#gameover{
-    background-image: url(./images/gameover.png);
-    height: 720px;
-    width: 720px;
-    margin: auto;
-    position: absolute;
-    opacity: 0;
-}
+
 #java{
     height: 55px;
     width: 55px;
     position: absolute;
     background-image: url(./images/javaScript.png);
 }
-#count{
-    
-    height: 35px;
-    width: 716px;
-    text-align: end;
-    padding-top: 25px;
-    position: absolute;
-    opacity: 0;
-}
 
-#myBtn {
-    position: absolute;
-    top: 324px;
-    height: 60px;
-    width: 90px;
-    opacity: 1;
-    text-align: center;
-    display: visible;
-}
+/* --- FIN SCRIPT NO HTML --- */
 
-#restart {
-    position: absolute;
-    top: 324px;
-    height: 60px;
-    width: 90px;
-    opacity: 1;
-    text-align: center;
-  
-}
+
+
+
  
 #zumoX {
     height: 55px;

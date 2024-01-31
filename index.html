@@ -12,13 +12,32 @@
     <title>After Saturday</title>
 </head>
 <body>
-    <header class="header"><h1>After Saturday</h1>
-        </header>
-        <main id ="board">
-            <div id="gameover"><button id="restart">RESTART GAME?</button></div>
-            <div id="count">0 POINTS</div>
-            <button id="myBtn">START</button>
-            
+    <header class="centrado">
+        <h1>After Saturday</h1>
+    </header>
+
+       
+    <main class="relative centrado">
+        <div id ="board" class="relative centrado">
+            <div class="imagen" style="background-image:url(images/board.png) ;"></div>
+
+            <div id="gameover" class="absolute centrado">
+                <div class="imagen" style="background-image:url(images/gameover.png) ;"></div>
+                <button id="restart" class="absolute">RESTART GAME?</button>
+            </div>
+
+            <div id="count" class="absolute">0 POINTS</div>
+
+            <button id="myBtn" class="absolute">START</button>
+
+            <div class="botella absolute">
+                <img src="images/aloe-0.png" alt="" class="absolute overlay">
+                <img src="images/aloe-1.png" alt="" class="absolute overlay">
+                <img src="images/aloe-2.png" alt="" class="absolute overlay">
+                <img src="images/aloe-3.png" alt="" class="absolute overlay">
+                <img src="images/aloe-4.png" alt="" class="absolute overlay">
+            </div>
+        </div>
     </main>
 </body>
 </html>
