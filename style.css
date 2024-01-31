@@ -3,16 +3,19 @@ html{
 }
 
 h1{
-    text-align: center;
     font-size: 50px;
 }
 
+.header{
+    text-align: center;
+    position:relative;   
+}
+
 body{
-    height: 800px;
-    width: 800px;
+    height: 100%;
+    width: 100%;
     position: relative;
     background-color: lavender;
-    padding: 3vh 10vh 27vw 27vw;
 }
 
 #board{
@@ -21,6 +24,7 @@ body{
     width: 720px;
     margin: auto;
     position: relative;
+    justify-content: center;
 }
 #player{
     height: 72px;
@@ -66,9 +70,17 @@ body{
 #count{
     border: solid red;
     height: 60px;
-    width: 718px;
+    width: 715px;
     margin: auto;
     text-align: end;
+}
+
+#myBtn {
+    height: 70px;
+    width: 90px;
+    opacity: 1;
+    text-align: center;
+    position:relative;
 }
  
 #zumoX {
