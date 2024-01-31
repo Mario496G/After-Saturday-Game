@@ -32,7 +32,6 @@ function EnemyY(x, y, parent, player, enemies) {
       //console.log(enemyY.timerId)
       enemyY.removeEnemy();
       enemies.splice(enemies.indexOf(enemyY), 1)
-
     }
   };
 
