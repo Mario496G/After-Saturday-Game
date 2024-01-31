@@ -36,6 +36,8 @@ function Player(x, y, parent, enemyY){
             player.sprite.style.top = player.y + "px"
         }
     }
+    
+   
 }
 
 export {Player}
