@@ -70,17 +70,13 @@ function gameOver(){
         clearInterval(createJavaInt)
         enemies.forEach(function(enemy){
             enemy.removeEnemy()
-            
         })
-
         javass.forEach(function(java){
             java.removeJavaY()
         })
         board.removeChild(player.sprite)
         gameover.style.opacity = 1
-        life.style.opacity = 0
     } 
-      enemies = []
 }
 
 
@@ -96,16 +92,7 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
 };
 //var createZumoInt = setInterval(createZumo,10000)
 
-/*document.getElementById("restart").addEventListener("click",resetGame)
-
-function resetGame() {
-    gameStart();
-    //clearInterval(gameOverId);
-    //clearInterval(createEnemyInt);
-    //clearInterval(createJavaInt);
-    gameover.style.opacity = 0;
-
-}*/
+let refresh = document.getElementById("restart"); refresh.addEventListener('click', _ => {             location.reload(); })
 
 
 window.onload=function(){
