@@ -1,3 +1,4 @@
+
 function Life(x, y, parent){
     var life = this
     this.height = 41
