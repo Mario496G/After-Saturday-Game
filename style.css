@@ -8,7 +8,7 @@ h1{
 
 .header{
     text-align: center;
-    position:relative;   
+    position: relative;   
 }
 
 body{
@@ -25,6 +25,7 @@ body{
     margin: auto;
     position: relative;
     justify-content: center;
+    display: flex;
 }
 #player{
     height: 72px;
@@ -71,11 +72,13 @@ body{
     border: solid red;
     height: 60px;
     width: 715px;
-    margin: auto;
     text-align: end;
+    position: absolute;
 }
 
 #myBtn {
+    position: absolute;
+    top: 324px;
     height: 70px;
     width: 90px;
     opacity: 1;
