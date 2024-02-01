@@ -21,7 +21,7 @@ html{
 
 
 body{
-    background-image: url(./images/pexels-felix-mittermeier-1146134.jpg);
+    background-image: url(./images/fondo.jpg);
 }
 
 #board{
@@ -33,6 +33,7 @@ body{
     justify-content: center;
     display: flex;
 }
+
 #player{
     height: 72px;
     width: 72px;
@@ -41,18 +42,21 @@ body{
     top: 324px;
     left: 324px;
 }
+
 #enemyY{
     height: 55px;
     width: 55px;
     position: absolute;
     background-image: url(./images/html.png);
 }
+
 #enemyX{
     height: 55px;
     width: 55px;
     position: absolute;
     background-image: url(./images/CSS.png);
 }
+
 .life {
     position: absolute;
     height: 41px;
@@ -61,7 +65,6 @@ body{
     margin-left: 10px;
     opacity: 1;
 }
-
 
 #gameover{
     background-image: url(./images/gameover.png);
@@ -73,22 +76,23 @@ body{
 }
 
 #startscreen{
-    background-image: url(./images/pexels-felix-mittermeier-1146134.jpg);
+    background-image: url(./images/fondo.jpg);
     height: 720px;
     width: 720px;
-    margin: auto;
+    margin: 0;
     position: absolute;
     opacity: 1;
     text-align: justify;
     color: white;
     font-size: 26px;
+    line-height:1.2em;
 }
 
 #wasd img{
-    margin:auto;
-    padding-left: 15%;
-    position: relative;
-    justify-content: center;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #java{
@@ -111,7 +115,7 @@ body{
 #myBtn {
     background-color: antiquewhite;
     position: absolute;
-    top: 270px;
+    top: 350px;
     height: 60px;
     width: 110px;
     opacity: 1;
@@ -141,22 +145,7 @@ body{
 #restart:hover{
     background-color: rgb(229, 14, 14);
 }
- 
-#zumoX {
-    height: 55px;
-    width: 55px;
-    position: absolute;
-    background-color: blue;
-}
 
-.botel {
-    position: absolute;
-    height: 50;
-    width: 50;
-    top: 640 px;
-    left: 640 px;
-    background-color: chartreuse;
-}
 
 .visible{
     display:visible;

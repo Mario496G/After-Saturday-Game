@@ -14,7 +14,6 @@ function JavaY(x, y, parent, player, javass) {
   var musicOk = new Audio ("./images/coin.mp3")
 
   this.insertJava = function () {
-    // console.log(parent)
     this.sprite.setAttribute("id", "java");
     this.sprite.style.left = this.x + "px";
     this.sprite.style.top = this.y + "px";
@@ -24,25 +23,21 @@ function JavaY(x, y, parent, player, javass) {
 
   this.javaMoveY = function () {
     java.checkCollision();
-    //console.log(java.y)
     if (java.y >= 0 && java.y <= 720) {
       java.y += java.speed;
       java.sprite.style.top = java.y + "px";
-    } //movimiento del enemigo en caida libre
+    } //movimiento del del los puntos en caida libre
     if (java.y > 670) {
-      //console.log(java.timerId)
       java.removeJavaY();
       javass.splice(javass.indexOf(java), 1);
     }
   };
-  //[0] 
   this.removeJavaY = function () {
     board.removeChild(java.sprite);
     clearInterval(java.timerId);
   };
 
   this.checkCollision = function () {
-    //console.log(java)
     if (
       java.x < player.x + player.width &&
       java.y < player.y + player.height &&

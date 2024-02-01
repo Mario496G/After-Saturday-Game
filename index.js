@@ -3,14 +3,11 @@ import { EnemyY } from './enemyY.js'
 import { EnemyX } from './enemyX.js'
 import { Life } from './life.js'
 import { JavaY } from './java.js'
-//import {ZumoX} from './zumoaloe.js'
 
 var board = document.getElementById("board")
 var player = new Player (324, 324, board)
-//var zumoX = new ZumoX
 var enemies = []
 var javass = []
-//var zumos = []
 var life;
 var gameOverId
 var createEnemyInt
@@ -18,27 +15,18 @@ var createJavaInt
 var musicGame = new Audio("./images/happy.mp3");
 
 
-var initialInterval = 2500
-var increaseSpeed = 100
-var minSpeed = 500
+var initialInterval = 2500 // intervalo incial para crear enemigos
+var increaseSpeed = 100 // con cada vuelta va aumentar en este valor 
+var minSpeed = 500 // incremento llega hasta este valor 
 var intervalToCreate = initialInterval
-
-/*function createZumo() {
-    var coord3 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
-    var zumoX = new ZumoX(0, coord3, board, player, zumos)
-    zumoX.insertZumo() 
-    zumos.push(zumoX) 
-    //velocidad de la caida libre
-    
-}*/
 
 
 function createJava() {
     var coord2 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
     var javaY = new JavaY(coord2, 0, board, player, javass)
     javaY.insertJava()
-    javass.push(javaY) 
-    //velocidad de la caida libre
+    javass.push(javaY)
+    
     
 }
 
@@ -68,7 +56,7 @@ function gameOver(){
 }
 
 
-function gameStart(){ //función de creación de personaje + enemigo amarillo
+function gameStart(){ //función de creación de personaje + enemigo 
     musicGame.play();
     
     player.insertPlayer()
@@ -88,20 +76,20 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
         enemyY.insertEnemy() 
         enemyX.insertEnemy()
         enemies.push(enemyY, enemyX) 
-         //velocidad de la caida libre
-         //console.log(enemies)
+        
           if (intervalToCreate > minSpeed) {
             intervalToCreate -= increaseSpeed
         }
-        console.log(intervalToCreate)
+        
         clearInterval(createEnemyInt); 
         createEnemyInt = setInterval(createEnemy, intervalToCreate);
       }
 
 };
-//var createZumoInt = setInterval(createZumo,10000)
 
-let refresh = document.getElementById("restart"); refresh.addEventListener('click', _ => {             location.reload(); })
+
+let refresh = document.getElementById("restart"); refresh.addEventListener('click', _ => {             location.reload(); }) 
+
 
 
 window.onload=function(){
@@ -112,7 +100,7 @@ window.onload=function(){
 }
 
 window.addEventListener('keydown', function(e){
-//console.log("paso de ti")
+
     switch(e.key){
 case "a": 
 player.directionX = -1

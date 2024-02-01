@@ -1,6 +1,3 @@
-//var domingoX = 324;
-//var domingoY = 324;
-
 function Player(x, y, parent, enemyY){
     var player = this
     this.height = 72

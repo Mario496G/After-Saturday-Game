@@ -13,7 +13,6 @@ function EnemyY(x, y, parent, player, enemies) {
   var musicBad = new Audio ("./images/badcollision.mp3")
 
   this.insertEnemy = function () {
-    // console.log(parent)
     this.sprite.setAttribute("id", "enemyY");
     this.sprite.style.left = this.x + "px";
     this.sprite.style.top = this.y + "px";
@@ -23,13 +22,11 @@ function EnemyY(x, y, parent, player, enemies) {
 
   this.enemyMoveY = function () {
     enemyY.checkCollision();
-    //console.log(enemyY.y)
     if (enemyY.y >= 0 && enemyY.y <= 720) {
       enemyY.y += enemyY.speed;
       enemyY.sprite.style.top = enemyY.y + "px";
     } //movimiento del enemigo en caida libre
     if (enemyY.y > 670) {
-      //console.log(enemyY.timerId)
       enemyY.removeEnemy();
       enemies.splice(enemies.indexOf(enemyY), 1)
     }
@@ -41,7 +38,6 @@ function EnemyY(x, y, parent, player, enemies) {
   };
 
   this.checkCollision = function () {
-    //console.log(enemyY)
     if (
       enemyY.x < player.x + player.width &&
       enemyY.y < player.y + player.height &&
@@ -55,8 +51,6 @@ function EnemyY(x, y, parent, player, enemies) {
       player.remainingLife = player.remainingLife - 1;
       musicBad.play()
       if (player.remainingLife <= 0) {
-        //gameover.style.opacity = 1;
-        //window.alert("GAME OVER");
       }
     }
   };
