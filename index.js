@@ -17,8 +17,13 @@ var createEnemyInt
 var createJavaInt
 var musicGame = new Audio("./images/happy.mp3");
 
+
+var initialInterval = 2500
+var increaseSpeed = 100
+var minSpeed = 500
+var intervalToCreate = initialInterval
+
 /*function createZumo() {
-    
     var coord3 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
     var zumoX = new ZumoX(0, coord3, board, player, zumos)
     zumoX.insertZumo() 
@@ -37,23 +42,6 @@ function createJava() {
     
 }
 
-
-function createEnemy() {
-    var coord = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
-    var coord1 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
-    
-    var enemyY = new EnemyY(coord, 0, board, player, enemies)
-    var enemyX = new EnemyX(0, coord1, board, player, enemies)
-    
-    enemyY.insertEnemy() 
-    enemyX.insertEnemy()
-    
-    enemies.push(enemyY, enemyX) 
-     //velocidad de la caida libre
-     console.log(enemies)
-
-  }
-  
 
 function createLife (n){
     for (var i = 0; i < n; i++) {
@@ -84,12 +72,32 @@ function gameStart(){ //función de creación de personaje + enemigo amarillo
     musicGame.play();
     
     player.insertPlayer()
-    createEnemyInt = setInterval(createEnemy,2000)
+    createEnemyInt = setInterval(createEnemy, intervalToCreate)
+    console.log(intervalToCreate)
     createJavaInt = setInterval(createJava, 10000)
     gameOverId = setInterval(gameOver, 500)
     createLife(3)
     count.style.opacity = 1;
     startscreen.style.opacity = 0;
+
+    function createEnemy() {
+        var coord = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+        var coord1 = Math.floor(Math.random() * 10) * 72 // generacion de ramdon
+        var enemyY = new EnemyY(coord, 0, board, player, enemies)
+        var enemyX = new EnemyX(0, coord1, board, player, enemies)
+        enemyY.insertEnemy() 
+        enemyX.insertEnemy()
+        enemies.push(enemyY, enemyX) 
+         //velocidad de la caida libre
+         //console.log(enemies)
+          if (intervalToCreate > minSpeed) {
+            intervalToCreate -= increaseSpeed
+        }
+        console.log(intervalToCreate)
+        clearInterval(createEnemyInt); 
+        createEnemyInt = setInterval(createEnemy, intervalToCreate);
+      }
+
 };
 //var createZumoInt = setInterval(createZumo,10000)
 

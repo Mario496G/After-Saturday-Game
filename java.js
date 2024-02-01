@@ -35,7 +35,7 @@ function JavaY(x, y, parent, player, javass) {
       javass.splice(javass.indexOf(java), 1);
     }
   };
-  //[0]
+  //[0] 
   this.removeJavaY = function () {
     board.removeChild(java.sprite);
     clearInterval(java.timerId);

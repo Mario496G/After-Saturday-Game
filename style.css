@@ -161,3 +161,16 @@ body{
 .visible{
     display:visible;
 }
+
+footer{
+    width: 100vw;
+    
+}
+.credits {
+    text-align: center;
+    width: 100vw;
+    color: white;
+    font-size: 60%;
+    padding-top: 2%;
+}
+
